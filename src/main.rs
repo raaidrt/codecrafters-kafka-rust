@@ -11,7 +11,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     for stream in listener.incoming() {
         match stream {
             Ok(mut stream) => {
-                let buf: [u8; 2] = [0, 7];
+                let buf: [u8; 8] = [0, 0, 0, 0, 0, 0, 0, 7];
                 stream.write(&buf)?;
                 println!("accepted new connection");
             }
