@@ -5,4 +5,5 @@ use deku::{DekuRead, DekuWrite};
 pub struct Response {
     pub message_size: i32,
     pub correlation_id: i32,
+    pub error_code: i16,
 }

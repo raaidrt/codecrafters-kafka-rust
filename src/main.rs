@@ -25,6 +25,7 @@ fn main() -> Result<(), Box<dyn Error>> {
                 let response = Response {
                     message_size: 0,
                     correlation_id: request.correlation_id,
+                    error_code: 35,
                 };
                 let buf = response.to_bytes()?;
                 stream.write(&buf)?;
