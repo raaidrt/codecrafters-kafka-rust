@@ -1,6 +1,5 @@
 ---
 source: src/request.rs
-assertion_line: 111
 expression: hex_string
 ---
 0000 | 00 00 00 10  00 00 10 e1
