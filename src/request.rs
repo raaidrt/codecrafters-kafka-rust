@@ -45,25 +45,25 @@ impl Request {
                     response::Header {
                         correlation_id: self.header.correlation_id,
                     },
-                    response::Body::ApiVersions(response::ApiVersionsBody {
-                        error_code: 0,
-                        api_keys: vec![response::ApiVersion {
+                    response::Body::ApiVersions(response::ApiVersionsBody::new(
+                        0,
+                        vec![response::ApiVersion {
                             api_key: api_key::API_VERSIONS,
                             min_version: 0,
                             max_version: 4,
                         }],
-                        throttle_time_ms: 0,
-                    }),
+                        0,
+                    )),
                 ),
                 _ => response::Response::new(
                     response::Header {
                         correlation_id: self.header.correlation_id,
                     },
-                    response::Body::ApiVersions(response::ApiVersionsBody {
-                        error_code: error_code::UNSUPPORTED_VERSION,
-                        api_keys: vec![],
-                        throttle_time_ms: 0,
-                    }),
+                    response::Body::ApiVersions(response::ApiVersionsBody::new(
+                        error_code::UNSUPPORTED_VERSION,
+                        vec![],
+                        0,
+                    )),
                 ),
             },
             _ => panic!("Unsupported API Key"),
