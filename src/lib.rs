@@ -17,6 +17,7 @@ pub fn run_server() -> Result<(), Box<dyn Error>> {
                 let buf: [u8; 96] = [0; 96];
                 let ((_, _), request) = Request::from_bytes((&buf, 0))?;
 
+                println!("{:?}", request);
                 let response = request.handle();
                 let buf = response.to_bytes()?;
                 stream.write_all(&buf)?;
