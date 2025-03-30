@@ -34,7 +34,7 @@ impl Size for Header {
 impl Request {
     pub fn new(header: Header) -> Request {
         Request {
-            message_size: header.size() + 4,
+            message_size: header.size(),
             header,
         }
     }

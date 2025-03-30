@@ -38,7 +38,7 @@ impl Size for ApiVersionsBody {
 impl Response {
     pub fn new(header: Header, body: Body) -> Response {
         Response {
-            message_size: 4 + header.size() + body.size(),
+            message_size: header.size() + body.size(),
             header,
             body,
         }
