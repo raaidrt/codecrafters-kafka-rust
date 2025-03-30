@@ -8,4 +8,8 @@ rust-version = "1.80"
 [dependencies]
 bytes = "1.3.0"                                  # helps manage buffers
 deku = "0.18.1"
+madsim = "0.2.31"
 thiserror = "1.0.38"                             # error handling
+
+[dev-dependencies]
+insta = { version = "1.34.0", features = ["redactions"] }
