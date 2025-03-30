@@ -32,6 +32,7 @@ impl Size for ApiVersionsBody {
             .iter()
             .map(ApiVersion::size)
             .fold(0, |a, b| a + b)
+            + 4
     }
 }
 
@@ -50,6 +51,7 @@ pub struct ApiVersionsBody {
     #[deku(endian = "big")]
     pub error_code: i16,
     pub api_keys: Vec<ApiVersion>,
+    pub throttle_time_ms: i32,
 }
 
 #[derive(Debug, PartialEq, DekuWrite)]

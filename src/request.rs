@@ -52,6 +52,7 @@ impl Request {
                             min_version: 0,
                             max_version: 4,
                         }],
+                        throttle_time_ms: 0,
                     }),
                 ),
                 _ => response::Response::new(
@@ -61,6 +62,7 @@ impl Request {
                     response::Body::ApiVersions(response::ApiVersionsBody {
                         error_code: error_code::UNSUPPORTED_VERSION,
                         api_keys: vec![],
+                        throttle_time_ms: 0,
                     }),
                 ),
             },
