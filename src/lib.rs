@@ -21,7 +21,7 @@ pub fn run_server() -> Result<(), Box<dyn Error>> {
                 println!("{:?}", request);
                 let response = request.handle();
                 let buf = response.to_bytes()?;
-                stream.write_all(&buf)?;
+                stream.write(&buf)?;
             }
             Err(e) => {
                 eprintln!("error: {}", e);

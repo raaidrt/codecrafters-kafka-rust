@@ -47,6 +47,7 @@ impl Response {
 
 #[derive(Debug, PartialEq, DekuWrite)]
 pub struct ApiVersionsBody {
+    #[deku(endian = "big")]
     pub error_code: i16,
     pub api_keys: Vec<ApiVersion>,
 }
